@@ -2,7 +2,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Optional" %>
 <%@ page import="uz.pdp.homework_8courcejsp.repo.ModuleRepo" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="uz.pdp.homework_8courcejsp.entity.Groups" %>
+<%@ page import="uz.pdp.homework_8courcejsp.repo.GroupRepo" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 02/12/2024
@@ -12,17 +14,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Module</title>
+    <title>Groups</title>
     <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
 <body>
 <%
-    List<Module> modules = new ArrayList<>();
+    List<Groups> groups = new ArrayList<>();
 
-    Integer courseId = Integer.parseInt(request.getParameter("courseId"));
-    Optional<List<Module>> optionalModuleList = ModuleRepo.findByCourseId(courseId);
-    if (optionalModuleList.isPresent()) {
-        modules = optionalModuleList.get();
+    Integer moduleId = Integer.parseInt(request.getParameter("moduleId"));
+    Optional<List<Groups>> optionalGroupList = GroupRepo.findByModuleId(moduleId);
+    if (optionalGroupList.isPresent()) {
+        groups = optionalGroupList.get();
     }
 %>
 
@@ -36,17 +38,17 @@
     </thead>
     <tbody>
     <%
-        for (Module module : modules) {
+        for (Groups group : groups) {
     %>
     <tr>
-        <td><%=module.getId()%>
+        <td><%=group.getId()%>
         </td>
-        <td><%=module.getName()%>
+        <td><%=group.getName()%>
         </td>
         <td>
-            <form action="/group.jsp">
-                <input type="hidden" name="moduleId" value="<%=module.getId()%>">
-                <button class="btn btn-dark">Groups</button>
+            <form action="/student.jsp">
+                <input type="hidden" name="groupId" value="<%=group.getId()%>">
+                <button class="btn btn-dark">Students</button>
             </form>
         </td>
     </tr>
