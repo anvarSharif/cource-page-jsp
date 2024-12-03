@@ -18,7 +18,8 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer amount;
-    @Column(name = "payType")
+    @Column(name = "paytype")
+    @Enumerated(EnumType.STRING)
     private PayType payType;
     @CreationTimestamp
     @Column(nullable = false,updatable = false)

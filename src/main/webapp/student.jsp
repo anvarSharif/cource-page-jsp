@@ -25,7 +25,13 @@
         students = optionalStudentList.get();
     }
 %>
-
+<div>
+    <form action="/report.jsp">
+        <button class="btn btn-dark m-2">
+            Report
+        </button>
+    </form>
+</div>
 <table class="table table-stripped">
     <thead>
     <tr>
@@ -49,7 +55,7 @@
             <form action="/addPayment.jsp">
                 <input type="hidden" name="studentId" value="<%=student.getId()%>">
                 <input type="hidden" name="groupId" value="<%=groupId%>">
-                <button class="btn btn-dark">Add payments</button>
+                <button class="btn btn-success">Add payments</button>
             </form>
         </td>
     </tr>
