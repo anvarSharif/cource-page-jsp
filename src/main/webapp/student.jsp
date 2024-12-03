@@ -48,6 +48,7 @@
         <td>
             <form action="/addPayment.jsp">
                 <input type="hidden" name="studentId" value="<%=student.getId()%>">
+                <input type="hidden" name="groupId" value="<%=groupId%>">
                 <button class="btn btn-dark">Add payments</button>
             </form>
         </td>

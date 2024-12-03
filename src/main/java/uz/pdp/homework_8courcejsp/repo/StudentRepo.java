@@ -21,4 +21,13 @@ public class StudentRepo {
             return Optional.of(studentList);
         }
     }
+
+    public static Optional<Student> findById(Integer studentId) {
+        try (
+                EntityManager entityManager = emf.createEntityManager()
+        ) {
+            Student student = entityManager.find(Student.class, studentId);
+            return Optional.of(student);
+        }
+    }
 }
