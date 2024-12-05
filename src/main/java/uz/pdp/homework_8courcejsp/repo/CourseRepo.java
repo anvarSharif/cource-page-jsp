@@ -8,8 +8,8 @@ import java.util.Optional;
 
 import static uz.pdp.homework_8courcejsp.config.MyListener.emf;
 
-public class CourseRepo {
-    public static Optional<List<Course>> FindAll(Integer pageNumber, String search) {
+public class CourseRepo extends BaseRepo<Course>{
+    public static Optional<List<Course>> getCourses(Integer pageNumber, String search) {
         pageNumber--;
         try (
                 EntityManager entityManager = emf.createEntityManager()
@@ -25,7 +25,7 @@ public class CourseRepo {
         }
     }
 
-    public static Optional<Course> findById(Integer courseId) {
+    /*public static Optional<Course> findById(Integer courseId) {
         try (
                 EntityManager entityManager = emf.createEntityManager()
         ) {
@@ -34,7 +34,7 @@ public class CourseRepo {
             entityManager.getTransaction().commit();
             return Optional.of(course);
         }
-    }
+    }*/
 
 
     public static Long count(String search) {

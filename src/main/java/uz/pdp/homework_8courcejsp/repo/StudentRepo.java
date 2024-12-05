@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import static uz.pdp.homework_8courcejsp.config.MyListener.emf;
 
-public class StudentRepo {
+public class StudentRepo extends BaseRepo<Student> {
     public static Optional<List<Student>> findByGroupId(Integer groupId, String search, Integer pageNumber) {
         pageNumber--;
         try (
@@ -24,14 +24,6 @@ public class StudentRepo {
         }
     }
 
-    public static Optional<Student> findById(Integer studentId) {
-        try (
-                EntityManager entityManager = emf.createEntityManager()
-        ) {
-            Student student = entityManager.find(Student.class, studentId);
-            return Optional.of(student);
-        }
-    }
     public static Long count(String search, Integer groupId) {
         try (
                 EntityManager entityManager = emf.createEntityManager()

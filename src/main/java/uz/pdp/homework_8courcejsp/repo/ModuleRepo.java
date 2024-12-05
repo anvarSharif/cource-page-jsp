@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import static uz.pdp.homework_8courcejsp.config.MyListener.emf;
 
-public class ModuleRepo {
+public class ModuleRepo extends BaseRepo<Module>{
     public static Optional<List<Module>> findByCourseId(Integer courseId, String search, Integer pageNumber){
         pageNumber--;
         try (

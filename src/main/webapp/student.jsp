@@ -78,6 +78,13 @@
                     <button class="btn btn-success">Add payments</button>
                 </form>
             </td>
+            <td>
+                <form action="/updateStudent.jsp">
+                    <input type="hidden" name="groupId" value="<%=groupId%>">
+                    <input type="hidden" name="studentId" value="<%=student.getId()%>">
+                    <button class="btn btn-dark">update</button>
+                </form>
+            </td>
         </tr>
         <%
             }

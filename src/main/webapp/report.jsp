@@ -19,7 +19,7 @@
 <body>
 
 <%
-    Optional<List<PaymentDTO>> list = DTORepo.findAll();
+    Optional<List<PaymentDTO>> list = DTORepo.getDTO();
 %>
 <div class="m-2 card">
 

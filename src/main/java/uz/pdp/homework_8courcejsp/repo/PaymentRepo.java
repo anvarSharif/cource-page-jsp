@@ -13,14 +13,7 @@ import static uz.pdp.homework_8courcejsp.config.MyListener.emf;
 public class PaymentRepo extends BaseRepo<Payment>{
 
 
-    public static Optional<Payment> findById(Integer paymentId) {
-        try (
-                EntityManager entityManager = emf.createEntityManager()
-        ) {
-            Payment payment = entityManager.find(Payment.class, paymentId);
-            return Optional.of(payment);
-        }
-    }
+
 
     public static Integer sumAmountForStudent(Integer studentId) {
         try (

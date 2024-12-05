@@ -3,14 +3,13 @@ package uz.pdp.homework_8courcejsp.repo;
 import jakarta.persistence.EntityManager;
 import uz.pdp.homework_8courcejsp.entity.req.PaymentDTO;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static uz.pdp.homework_8courcejsp.config.MyListener.emf;
 
 public class DTORepo {
-    public static Optional<List<PaymentDTO>> findAll() {
+    public static Optional<List<PaymentDTO>> getDTO() {
         try (EntityManager entityManager = emf.createEntityManager()) {
             List<PaymentDTO> results = entityManager
                     .createNativeQuery("""

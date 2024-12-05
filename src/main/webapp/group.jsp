@@ -70,6 +70,13 @@
                     <button class="btn btn-dark">Students</button>
                 </form>
             </td>
+            <td>
+                <form action="/updateGroup.jsp">
+                    <input type="hidden" name="moduleId" value="<%=moduleId%>">
+                    <input type="hidden" name="groupId" value="<%=group.getId()%>">
+                    <button class="btn btn-dark">update</button>
+                </form>
+            </td>
         </tr>
         <%
             }

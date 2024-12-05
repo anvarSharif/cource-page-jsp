@@ -19,7 +19,7 @@
 <%
     String search = Objects.requireNonNullElse(request.getParameter("search"), "");
     Integer pageNumber = Integer.parseInt(Objects.requireNonNullElse(request.getParameter("page"), "1"));
-    Optional<List<Course>> coursesOptional = CourseRepo.FindAll(pageNumber,search);
+    Optional<List<Course>> coursesOptional = CourseRepo.getCourses(pageNumber,search);
 
 %>
 <div class="w-25 p-4">
@@ -55,6 +55,12 @@
                 <form action="/module.jsp">
                     <input type="hidden" name="courseId" value="<%=course.getId()%>">
                     <button class="btn btn-dark">Modules</button>
+                </form>
+            </td>
+            <td>
+                <form action="/UpdateCourse.jsp">
+                    <input type="hidden" name="courseId" value="<%=course.getId()%>">
+                    <button class="btn btn-dark">Update</button>
                 </form>
             </td>
         </tr>

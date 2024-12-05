@@ -23,7 +23,8 @@ public class AddPaymentServlet extends HttpServlet {
         Integer studentId = Integer.parseInt(req.getParameter("studentId"));
         Integer groupId = Integer.parseInt(req.getParameter("groupId"));
         PayType payType = PayType.valueOf(req.getParameter("payType"));
-        Optional<Student> optionalStudent = StudentRepo.findById(studentId);
+        StudentRepo studentRepo=new StudentRepo();
+        Optional<Student> optionalStudent = studentRepo.findById(studentId);
         Payment payment=new Payment(
                 amount,
                 payType,
