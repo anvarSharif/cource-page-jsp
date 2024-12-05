@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 public class PaymentDTO {
     private String name;
     private Long count;
+    private Long amount;
+
 
     public PaymentDTO(String name, Long count, Long amount) {
         this.name = name;
         this.count = count;
         this.amount = amount;
     }
-
-    private Long amount;
 
 
 }

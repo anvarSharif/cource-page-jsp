@@ -13,10 +13,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Payment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Payment extends BaseEntity{
+
     private Integer amount;
     @Column(name = "paytype")
     @Enumerated(EnumType.STRING)

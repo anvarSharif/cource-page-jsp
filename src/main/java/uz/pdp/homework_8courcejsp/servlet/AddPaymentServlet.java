@@ -29,7 +29,8 @@ public class AddPaymentServlet extends HttpServlet {
                 payType,
                 optionalStudent.get()
         );
-        PaymentRepo.save(payment);
+        PaymentRepo paymentRepo=new PaymentRepo();
+        paymentRepo.save(payment);
         resp.sendRedirect("/student.jsp?groupId="+groupId);
     }
 }

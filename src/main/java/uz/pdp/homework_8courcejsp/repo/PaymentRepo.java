@@ -10,16 +10,8 @@ import java.util.Optional;
 
 import static uz.pdp.homework_8courcejsp.config.MyListener.emf;
 
-public class PaymentRepo {
-    public static void save(Payment payment) {
-        try (
-                EntityManager entityManager = emf.createEntityManager()
-        ) {
-            entityManager.getTransaction().begin();
-            entityManager.persist(payment);
-            entityManager.getTransaction().commit();
-        }
-    }
+public class PaymentRepo extends BaseRepo<Payment>{
+
 
     public static Optional<Payment> findById(Integer paymentId) {
         try (
